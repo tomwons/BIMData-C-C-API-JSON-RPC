@@ -1,0 +1,73 @@
+﻿<Window x:Class="BIMData.ProjektyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Wybierz projekt do pracy" Height="380" Width="470"
+        WindowStartupLocation="CenterOwner" Background="#F5F5F5"
+        MinWidth="400" MinHeight="300"
+        Closing="OnClosing">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="140"/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox x:Name="ProjektyListBox" Grid.Column="0" Margin="0,0,10,0"
+                 DisplayMemberPath="Nazwa" Background="White" BorderBrush="#DDDDDD"
+                 BorderThickness="1" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 MouseDoubleClick="OnListBoxDoubleClick">
+            <ListBox.Resources>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Padding" Value="8,6"/>
+                    <Setter Property="Margin" Value="2,1"/>
+                </Style>
+            </ListBox.Resources>
+        </ListBox>
+
+        <StackPanel Grid.Column="1" VerticalAlignment="Top">
+            <Button Content="Wybierz projekt" Click="OnWybierzProjekt" Margin="0,0,0,5" Height="36" 
+                    Background="#EBEBEB" Foreground="#333333" BorderThickness="0">
+                    
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="4"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Content="Wyszukaj projekt" Click="OnWyszukajProjekt" Margin="0,0,0,15" Height="36" 
+                    Background="#EBEBEB" Foreground="#333333" BorderThickness="0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="4"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Separator Height="1" Background="#DDDDDD" Margin="0,0,0,15"/>
+
+            <Button Content="Dodaj projekt" Click="OnDodajProjekt" Margin="0,0,0,5" Height="32" 
+                    Background="Beige" Foreground="Green" FontWeight="Bold" BorderThickness="0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="4"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Content="Usuń projekt" Click="OnUsunProjekt" Margin="0,0,0,20" Height="32"
+                    Background="#FFEAEA" Foreground="#CC0000" FontWeight="SemiBold" BorderThickness="0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="4"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button Content="Zmień nazwę" Click="OnZmienNazwe" Margin="0,0,0,10" Height="32"
+                    Background="#EBEBEB" Foreground="#333333" BorderThickness="0">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="4"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
